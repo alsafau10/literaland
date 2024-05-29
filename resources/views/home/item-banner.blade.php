@@ -40,7 +40,7 @@
                     Total<br><strong>20</strong><br>
                   </span> -->
                   <div class="text-button">
-                    <a href="#">View Item Details</a>
+                    <a href="{{url('details',$data->id)}}">View Item Details</a>
                   </div>
                 </div>
               </div>

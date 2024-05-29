@@ -38,7 +38,10 @@ route::get('/edit_data/{id}',[AdminController::class, 'edit_data']);
 route::get('/add_book',[AdminController::class, 'add_book']);
 route::get('/show_book',[AdminController::class, 'show_book']);
 route::get('/delete_book/{id}',[AdminController::class, 'delete_book']);
+route::get('/edit_book/{id}',[AdminController::class, 'edit_book']);
+route::get('details/{id}',[AdminController::class, 'details']);
 // post route
 route::post('/add_category',[AdminController::class, 'add_category']);
 route::post('/update_category/{id}',[AdminController::class, 'update_category']);
 route::post('/store_book',[AdminController::class, 'store_book']);
+route::post('/update_book/{id}',[AdminController::class, 'update_book']);

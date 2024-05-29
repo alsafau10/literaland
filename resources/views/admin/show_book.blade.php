@@ -50,6 +50,12 @@
             border: 3px solid #8a8d93;
             
         }
+        .container.description{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+            
+        }
         td{
             border: 3px solid #db6574;
             padding: 10px;
@@ -95,14 +101,15 @@
                     <th>Category</th>
                     <th>Author's Image</th>
                     <th>Book's Image</th>
-                    <th>Action</th>
+                    <th>Delete</th>
+                    <th>Update</th>
                 </tr>
                 @foreach($book as $book)
                 <tr>
                     <td>{{$book->title}}</td>
                     <td>{{$book->author_name}}</td>
                     <td>{{$book->quantity}}</td>
-                    <td>{{$book->description}}</td>
+                    <td><div class= "container description">{{$book->description}}</div></td>
                     <td>{{$book->category->cat_title}}</td>
                     <td>
                         <div class="container author">
@@ -115,6 +122,7 @@
                         </div>
                     </td>
                     <td><a onclick=confirmation(event) href="{{url('delete_book',$book->id)}}" class = "btn btn-danger">Delete</a></td>
+                    <td><a href="{{url('edit_book',$book->id)}}" class="btn btn-info">Update</a></td>
                 </tr>
                 @endforeach
             </table>
