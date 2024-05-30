@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Book;
+use App\Models\BorrowList;
 use App\Models\Category;
 
 class AdminController extends Controller
@@ -133,6 +134,11 @@ class AdminController extends Controller
     public function details($id){
         $book = Book::find($id);
         return view('home.details',compact('book'));
+    }
+
+    public function request_confirmation(){
+        $borrow = BorrowList::all();
+        return view('admin.request_confirmation',compact('borrow'));
     }
 
 }

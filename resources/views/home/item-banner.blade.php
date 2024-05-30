@@ -42,6 +42,9 @@
                   <div class="text-button">
                     <a href="{{url('details',$data->id)}}">View Item Details</a>
                   </div>
+                  <div class="text-center text-button">
+                    <a href="{{url('book_request',$data->id)}}" class=""><dl>Borrow book</dl></a>
+                  </div>
                 </div>
               </div>
             </div>
