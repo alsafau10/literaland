@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
- @include('home.css')
+@include('home.css')
 
 <body>
 
@@ -19,16 +19,16 @@
   <!-- ***** Preloader End ***** -->
 
   <!-- header -->
-    @include('home.header')
-    <!-- main banner -->
-    @include('home.main-banner')
-  
-  <!-- cat-banner -->
-  @include('home.cat-banner')
-  
+  @include('home.header')
+  <!-- main banner -->
+  @include('home.main-banner')
 
- <!-- items-banner -->
-@include('home.item-banner')
+  <!-- cat-banner -->
+  <!-- @include('home.cat-banner') -->
+
+
+  <!-- items-banner -->
+  @include('home.item-banner')
   <footer>
     <div class="container">
       <div class="row">
@@ -44,5 +44,6 @@
   <!-- Bootstrap core JavaScript -->
   @include('home.script')
 
-  </body>
+</body>
+
 </html>

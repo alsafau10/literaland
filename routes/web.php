@@ -16,7 +16,7 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-route::get('/',[HomeController::class,'index']);
+route::get('/', [HomeController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -28,23 +28,28 @@ Route::middleware([
     })->name('dashboard');
 });
 
-route::get('/home',[AdminController::class, 'index']);
+route::get('/home', [AdminController::class, 'index']);
 
 
 // get routers
-route::get('/category_page',[AdminController::class, 'category_page']);
-route::get('/cat_delete/{id}',[AdminController::class, 'cat_delete']);
-route::get('/edit_data/{id}',[AdminController::class, 'edit_data']);
-route::get('/add_book',[AdminController::class, 'add_book']);
-route::get('/show_book',[AdminController::class, 'show_book']);
-route::get('/delete_book/{id}',[AdminController::class, 'delete_book']);
-route::get('/edit_book/{id}',[AdminController::class, 'edit_book']);
-route::get('/details/{id}',[AdminController::class, 'details']);
-route::get('/book_request/{id}',[HomeController::class, 'book_request']);
-route::get('/request_confirmation',[AdminController::class, 'request_confirmation']);
+route::get('/category_page', [AdminController::class, 'category_page']);
+route::get('/cat_delete/{id}', [AdminController::class, 'cat_delete']);
+route::get('/edit_data/{id}', [AdminController::class, 'edit_data']);
+route::get('/add_book', [AdminController::class, 'add_book']);
+route::get('/show_book', [AdminController::class, 'show_book']);
+route::get('/delete_book/{id}', [AdminController::class, 'delete_book']);
+route::get('/edit_book/{id}', [AdminController::class, 'edit_book']);
+route::get('/details/{id}', [AdminController::class, 'details']);
+route::get('/book_request/{id}', [HomeController::class, 'book_request']);
+route::get('/myHistory', [HomeController::class, 'myHistory']);
+route::get('/request_confirmation', [AdminController::class, 'request_confirmation']);
+route::get('/explore', [HomeController::class, 'explore']);
+route::get('/search', [HomeController::class, 'search']);
+
 
 // post route
-route::post('/add_category',[AdminController::class, 'add_category']);
-route::post('/update_category/{id}',[AdminController::class, 'update_category']);
-route::post('/store_book',[AdminController::class, 'store_book']);
-route::post('/update_book/{id}',[AdminController::class, 'update_book']);
+route::post('/add_category', [AdminController::class, 'add_category']);
+route::post('/update_category/{id}', [AdminController::class, 'update_category']);
+route::post('/store_book', [AdminController::class, 'store_book']);
+route::post('/update_book/{id}', [AdminController::class, 'update_book']);
+route::post('/confirmation_request/{id}', [AdminController::class, 'confirmation_request']);

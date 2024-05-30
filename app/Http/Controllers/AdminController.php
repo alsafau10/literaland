@@ -141,4 +141,12 @@ class AdminController extends Controller
         return view('admin.request_confirmation',compact('borrow'));
     }
 
+    public function confirmation_request(Request $request,$id){
+        $borrow = BorrowList::find($id);
+        $borrow->status = $request->status_con;
+        $borrow->save();
+        return redirect()->back()->with('confirmation','status has been changed');
+
+    }
+
 }

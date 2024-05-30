@@ -79,9 +79,9 @@
           </div>
         </div>
         <!-- section start -->
-        @if (session()->has('message'))
+        @if (session()->has('confirmation'))
             <div class="alert alert-success">
-            {{session()->get('message')}}
+            {{session()->get('confirmation')}}
             <button type="button" class="close" data-dismiss="alert" 
             aria-hidden="true">x</button>
             </div>
@@ -109,10 +109,19 @@
                     <td>{{$borrow->book->title}}</td>
                     <td>{{$borrow->book->quantity}}</td>
                     <td>
-                        <div>
-                            {{$borrow->status}}
+                        <div class = "card">
+                            <h3>{{$borrow->status}}</h3>
                         </div>
-                        
+                        <form action="{{url('confirmation_request',$borrow->id)}}" method="post">
+                            @csrf
+                            <h4 style="padding-top: 5px;color:white;font-size: 15px;">Change Confirmation Status</h4>
+                            <select name="status_con" required>
+                                <option value=""></option>
+                                <option value="accepted">Accept</option>
+                                <option value="rejected">Reject</option>
+                            </select>
+                            <button type="submit" class="btn btn-info">Confirm</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
